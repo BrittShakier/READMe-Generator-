@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 
+const fs = require('fs');
 
 
 // TODO: Create an array of questions for user input
@@ -11,36 +12,46 @@ const questions = [{
 }, {
     type: "input",
     message: "What is the project about?  Give a detailed description of your project.",
-    name: "Description"
+    name: "description"
 }, {
     type: "input",
     message: "Please provide a link to the project.",
     name: "link"
-},{
+}, {
     type: "input",
     message: "Please provide a screenshot of the project.",
     name: "screenshot"
-},{
+}, {
     type: "input",
     message: "List Table of Contents.",
     name: "table of contents"
-},{
+}, {
     type: "input",
     message: "What needs to be installed to get the project to run?",
-    name: "Installation"
-},{
+    name: "installation"
+}, {
     type: "input",
     message: "Provide instructions on how to use the project.",
-    name: "Usage"
-},{
+    name: "usage"
+}, {
     type: "input",
     message: "List your collaborators or team members.",
-    name: "Credits"
-},{
+    name: "credits"
+}, {
     type: "input",
     message: "What license is being used? Choose from teh following: MIT , Apache-2.0, or none ",
-    name: "License"
+    name: "license"
+}, {
+    type: "input",
+    message: "What is your github name",
+    name: "githubUsername"
+}, {
+    type: "input",
+    message: "What is your email?",
+    name: "email"
+
 }
+
 ];
 
 // TODO: Create a function to write README file

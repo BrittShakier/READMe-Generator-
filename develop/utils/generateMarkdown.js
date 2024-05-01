@@ -10,7 +10,7 @@ function renderLicenseBadge(license) {
             licenseBadge = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
             break;
 
-        case 'none' = licenseBadge = '' :
+        case 'none' = licenseBadge = '':
             break;
     }
 
@@ -71,10 +71,58 @@ This project is licensed under the [Apache License 2.0](https://opensource.org/l
 
 
 // TODO: Create a function to generate markdown for README
+const licenseBadge = getLicenseBadge(license);
+const licenseLink = getLicenseLink(license);
+const licenseSection = generateLicenseSection(license);
+
 function generateMarkdown(data) {
     return `# ${data.title}
-  
+
+  ## Description
+
+${data.description}
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshot](#screenshot)
+- [Link](#link)
+- [Credits](#credits)
+- [License](#license)
+- [Questions](#questions)
+
+## Installation
+
+${data.installation}
+
+## Usage
+
+${data.usage}
+${data.screenshot}
+${data.link}
+
+##Credits
+${data.credits}
+
+##License
+
+${licenseBadge}
+${licenseLink}
+${licenseSection}
+
+## Questions
+
+If you have any questions, feel free to reach out:
+
+GitHub: [${githubUsername}](https://github.com/${githubUsername})
+
+Email: ${email}
+
   `;
-  }
-  module.exports = generateMarkdown;
+}
+
+
+
+module.exports = generateMarkdown;
 
