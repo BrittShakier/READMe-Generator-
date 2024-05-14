@@ -77,11 +77,4 @@ function init(questions) {
 
 // Function call to initialize app
 
-function init() { 
-    inquirer.prompt(questions).then((answers) => {
-    console.log("Creating Professional README.md File...");
-    writeToFile(".README.md", generateMarkdown({ answers }));
-  });
-}
-
 init();
